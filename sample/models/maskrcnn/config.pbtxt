@@ -1,0 +1,26 @@
+platform: "openppl_onnx"
+max_batch_size: 16
+input [
+  {
+    name: "input"
+    data_type: TYPE_FP32
+    dims: [ 3, -1, -1 ]
+  }
+]
+output [
+  {
+    name: "labels"
+    data_type: TYPE_INT64
+    dims: [ 80 ]
+  },
+  {
+    name: "dets"
+    data_type: TYPE_FP32
+    dims: [ 80, 5 ]
+  },
+  {
+    name: "masks"
+    data_type: TYPE_BOOL
+    dims: [ 80, -1, -1 ]
+  }
+]
